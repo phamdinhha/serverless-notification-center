@@ -1,0 +1,4 @@
+requests
+jwt
+pyjwt
+boto3
