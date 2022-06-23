@@ -1,5 +1,5 @@
 # Serverless websocket notification center
-A serverless notification center on AWS Websocker API
+A serverless notification center using AWS Websocket API
 
 ![alt text](https://github.com/phamdinhha/serverless-notification-center/blob/main/imgs/noti-service.drawio.png)
 
