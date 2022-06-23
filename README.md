@@ -20,7 +20,7 @@ sam deploy --guided
 
 ## Testing
 Use postman to connect to your Websocket API.
-Use AWS EvenBridge to send push notification to the clients
+Use AWS EventBridge to send push notification to the clients.
 
 ## AWS infrastructures
 All AWS infrastructures for this project are defined in [template.yml](https://github.com/phamdinhha/serverless-notification-center/blob/main/template.yaml)
@@ -28,8 +28,8 @@ All AWS infrastructures for this project are defined in [template.yml](https://g
 
 ## Lamdas
 ### Authorizer
-Handle authorization when client connect to the websocket API, you can write your own custom lambda authorizer
-Custom authorizer have to return the policy document that specify the allowed actions on the specified resources
+Handle authorization when client connect to the websocket API, you can write your own custom lambda authorizer.
+Custom authorizer have to return the policy document that specify the allowed actions on the specified resources.
 ```
 return {
     "principalId": claims["email"],
@@ -47,10 +47,10 @@ return {
 }
 ```
 ### Create socket connection
-Handle the create connection request from clients. In this example I insert the user_id and connection_id to a DynamoDB table
+Handle the create connection request from clients. In this example I insert the user_id and connection_id to a DynamoDB table.
 
 ### Delete socket connection
-Handle the delete connection request from clients.
+Handle the delete connection request from clients. In this example I will delete the connection_id of when the client disconnect from the Websocket API.
 
 ### Notify users
 Handle event when the server want to send notification to a specific user.
