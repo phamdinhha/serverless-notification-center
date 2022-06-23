@@ -1,9 +1,9 @@
-# serverless-notification-center
-A serverless notification center on AWS
+# Serverless websocket notification center
+A serverless notification center on AWS Websocker API
 
 ![alt text](https://github.com/phamdinhha/serverless-notification-center/blob/main/imgs/noti-service.drawio.png)
 
-# Installation
+## Installation
 Make sure you have enough permissions on your AWS account to:
 - Create IAM roles
 - Create/list s3 buckets
@@ -18,15 +18,15 @@ Make sure you have [AWS SAM](https://aws.amazon.com/serverless/sam/) installed o
 sam deploy --guided
 ```
 
-# Testing
+## Testing
 Use postman to connect to your Websocket API.
 Use AWS EvenBridge to send push notification to the clients
 
-# AWS infrastructures
+## AWS infrastructures
 All AWS infrastructures for this project are defined in [template.yml](https://github.com/phamdinhha/serverless-notification-center/blob/main/template.yaml)
 
 
-# Lamdas
+## Lamdas
 ### Authorizer
 Handle authorization when client connect to the websocket API, you can write your own custom lambda authorizer
 Custom authorizer have to return the policy document that specify the allowed actions on the specified resources
@@ -54,5 +54,3 @@ Handle the delete connection request from clients.
 
 ### Notify users
 Handle event when the server want to send notification to a specific user.
-
-#
